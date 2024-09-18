@@ -41,6 +41,8 @@ public class FifaService {
         } catch (Exception e) {
             System.out.println("오류가 발생했습니다: " + e.getMessage());
             result = "작업 중 오류가 발생했습니다: " + e.getMessage();  // 오류 메시지를 반환
+            driver.quit();
+            executeTask();
         } finally {
             // 브라우저 종료
             driver.quit();
