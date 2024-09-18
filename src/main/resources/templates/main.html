@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FIFA Task</title>
+</head>
+<body>
+<h1>FIFA Task Execution</h1>
+
+<!-- 버튼을 클릭하면 /fifa URL로 GET 요청을 보냄 -->
+<form th:action="@{/fifa}" method="post">
+    <button type="submit">FIFA Task 실행</button>
+</form>
+</body>
+</html>
