@@ -41,7 +41,6 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 
     implementation 'com.sikulix:sikulixapi:2.0.5'
-
 }
 
 tasks.named('test') {
