@@ -15,6 +15,7 @@ java {
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' } // JitPack 추가
 }
 
 dependencies {
@@ -23,8 +24,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     // Selenium dependencies
-    implementation 'org.seleniumhq.selenium:selenium-java:4.19.1' // Selenium 최신 버전
-    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.19.1' // ChromeDriver 최신 버전
+    implementation 'org.seleniumhq.selenium:selenium-java:4.19.1'
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.19.1'
 
     // Development dependencies
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -33,16 +34,25 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    /*lombok*/
+    /* lombok */
     annotationProcessor 'org.projectlombok:lombok'
     compileOnly 'org.projectlombok:lombok'
 
     // Swagger ui
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 
-    implementation 'com.sikulix:sikulixapi:2.0.5'
+    // Sikulix API with SLF4J NOP excluded
+    implementation('com.sikulix:sikulixapi:2.0.5') {
+        exclude group: 'org.slf4j', module: 'slf4j-nop'
+    }
 
+    // Tess4J
     implementation 'net.sourceforge.tess4j:tess4j:4.5.4'
+
+    // OpenCV Java (수동 다운로드)
+    implementation 'org.opencv:opencv:4.5.5' // 적절한 OpenCV 버전 사용
+
+    implementation files('libs/opencv-4.x.x.jar') // 다운로드한 JAR 파일 경로
 }
 
 tasks.named('test') {
