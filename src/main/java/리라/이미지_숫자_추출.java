@@ -32,7 +32,7 @@ public class 이미지_숫자_추출 {
         tesseract.setLanguage("eng"); // OCR에 사용할 언어 설정 (영어)
 
         // 원본 이미지 파일 경로 설정
-        String originalImagePath = "C:\\Users\\m5118\\Videos\\Captures\\3강.png";
+        String originalImagePath = "C:\\Users\\m5118\\Videos\\Captures\\3강1.png";
         File originalImageFile = new File(originalImagePath);
 
         // 이미지 파일 존재 여부 확인
@@ -42,7 +42,7 @@ public class 이미지_숫자_추출 {
         }
 
         // 이미지 전처리 수행
-        String processedImagePath = "C:\\Users\\m5118\\Videos\\Captures\\숫자1_processed.png";
+        String processedImagePath = "C:\\Users\\m5118\\Videos\\Captures\\3강2.png";
         boolean preprocessingSuccess = preprocessImage(originalImagePath, processedImagePath);
 
         if (!preprocessingSuccess) {

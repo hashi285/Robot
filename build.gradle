@@ -9,7 +9,8 @@ version = '0.0.1-SNAPSHOT'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        // JDK 17로 변경
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -38,7 +39,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     compileOnly 'org.projectlombok:lombok'
 
-    // Swagger ui
+    // Swagger UI
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 
     // Sikulix API with SLF4J NOP excluded
@@ -49,12 +50,14 @@ dependencies {
     // Tess4J
     implementation 'net.sourceforge.tess4j:tess4j:4.5.4'
 
-    // OpenCV Java (수동 다운로드)
-    implementation 'org.opencv:opencv:4.5.5' // 적절한 OpenCV 버전 사용
-
-    implementation files('libs/opencv-4.x.x.jar') // 다운로드한 JAR 파일 경로
+    // OpenCV JAR 파일 추가
+    implementation files('C:/Users/m5118/IdeaProjects/Robot/opencv/build/java/opencv-4100.jar')
 }
 
+// OpenCV 네이티브 라이브러리 경로 설정
+tasks.withType(JavaExec) {
+    jvmArgs = ['-Djava.library.path=C:/Users/m5118/IdeaProjects/Robot/opencv/build/java/x64']
+}
 tasks.named('test') {
     useJUnitPlatform()
 }
