@@ -1,4 +1,4 @@
-package Selenium;
+package 연습;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

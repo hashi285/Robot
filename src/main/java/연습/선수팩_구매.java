@@ -1,4 +1,4 @@
-package 리라;
+package 연습;
 
 import java.awt.*;
 import java.awt.event.InputEvent;

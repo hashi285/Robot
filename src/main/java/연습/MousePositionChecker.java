@@ -1,4 +1,4 @@
-package MousePositionChecker;
+package 연습;
 
 import java.awt.MouseInfo;
 import java.awt.Point;

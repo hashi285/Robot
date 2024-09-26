@@ -1,4 +1,4 @@
-package 리라;
+package 연습;
 
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;

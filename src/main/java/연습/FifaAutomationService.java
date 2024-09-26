@@ -3,8 +3,6 @@ package 연습;
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 
-import java.io.IOException;
-
 public class FifaAutomationService {
     public static void main(String[] args) throws Exception {
         // 실행하려는 .lnk 파일 경로
