@@ -32,7 +32,7 @@ public class 이미지_숫자_추출 {
         tesseract.setLanguage("eng"); // OCR에 사용할 언어 설정 (영어)
 
         // 원본 이미지 파일 경로 설정
-        String originalImagePath = "C:\\Users\\m5118\\Videos\\Captures\\111.png";
+        String originalImagePath = "C:\\Users\\m5118\\Videos\\Captures\\3강1.png";
         File originalImageFile = new File(originalImagePath);
 
         // 이미지 파일 존재 여부 확인
@@ -106,17 +106,22 @@ public class 이미지_숫자_추출 {
         Imgproc.adaptiveThreshold(blurred, binary, 255, Imgproc.ADAPTIVE_THRESH_GAUSSIAN_C,
                 Imgproc.THRESH_BINARY_INV, 11, 2);
 
-        // 4. 이미지 확대 (해상도 향상)
+        // 4. 이미지의 크기를 동적으로 계산하여 비율에 맞게 조정
+        Size originalSize = image.size();
+        double aspectRatio = originalSize.width / originalSize.height;
+        double targetWidth = 1000; // 원하는 폭에 맞추어 조정
+        double targetHeight = targetWidth / aspectRatio;
+
         Mat resized = new Mat();
-        Imgproc.resize(binary, resized, new Size(), 2, 2, Imgproc.INTER_LINEAR);
+        Imgproc.resize(binary, resized, new Size(targetWidth, targetHeight), 0, 0, Imgproc.INTER_LINEAR);
 
         // 5. 샤프닝 (경계 강화)
         Mat sharpened = new Mat();
         Mat kernel = new Mat(3, 3, CvType.CV_32F) {
             {
-                put(0, 0,  0, -1,  0);
-                put(1, 0, -1,  5, -1);
-                put(2, 0,  0, -1,  0);
+                put(0, 0, 0, -1, 0);
+                put(1, 0, -1, 5, -1);
+                put(2, 0, 0, -1, 0);
             }
         };
         Imgproc.filter2D(resized, sharpened, -1, kernel);

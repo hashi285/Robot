@@ -1,10 +1,5 @@
 package 연습;
 
-import org.opencv.core.Core;
-import org.opencv.core.Mat;
-import org.opencv.highgui.HighGui;
-import org.opencv.imgcodecs.Imgcodecs;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -14,7 +9,19 @@ public class 이미지_윤곽선_확인 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Select Rectangle");
         ImageIcon imageIcon = new ImageIcon("C:\\Users\\m5118\\Videos\\Captures\\111.png");
-        JLabel label = new JLabel(imageIcon);
+
+        // 이미지 크기 확인
+        int imgWidth = imageIcon.getIconWidth();
+        int imgHeight = imageIcon.getIconHeight();
+
+        JLabel label = new JLabel(imageIcon) {
+            @Override
+            public Dimension getPreferredSize() {
+                return new Dimension(imgWidth, imgHeight);
+            }
+        };
+
+        // JFrame 크기를 이미지 크기에 맞추기
         frame.add(label);
 
         label.addMouseListener(new MouseAdapter() {

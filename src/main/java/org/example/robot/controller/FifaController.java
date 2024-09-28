@@ -1,7 +1,9 @@
 package org.example.robot.controller;
 
 import lombok.AllArgsConstructor;
+import org.example.robot.service.AdService;
 import org.example.robot.service.FifaService;
+import org.example.robot.service.AsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class FifaController {
 
     private final FifaService fifaService;
+    private final AsService as_Service;
+    private final AdService ad_Service;
+
+
 
     @GetMapping("/fifa")
     public String fifa(Model model) {
@@ -23,6 +29,8 @@ public class FifaController {
     public String fifaSubmit(Model model) {
         String result = fifaService.executeTask();
         model.addAttribute("result", result);
+        as_Service.B();
+        ad_Service.A();
         return "main";
     }
 }

@@ -14,7 +14,7 @@ public class 이미지_특정좌표 {
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                System.out.println("클릭된 좌표: (" + e.getX() + ", " + e.getY() + ")");
+                System.out.println("클릭된 좌표: (" + e.getX() + " , " + e.getY() + ")");
             }
         });
 
