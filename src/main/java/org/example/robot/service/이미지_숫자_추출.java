@@ -1,11 +1,11 @@
-package 연습;
+package org.example.robot.service;
 
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 import org.opencv.core.Core;
-import org.opencv.core.Mat;
 import org.opencv.core.CvType;
+import org.opencv.core.Mat;
 import org.opencv.core.Size;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
@@ -23,7 +23,7 @@ public class 이미지_숫자_추출 {
         }
     }
 
-    public static void main(String[] args) {
+    public static void A(String[] args) {
         // Tesseract 인스턴스 생성
         ITesseract tesseract = new Tesseract();
 
@@ -32,7 +32,7 @@ public class 이미지_숫자_추출 {
         tesseract.setLanguage("eng"); // OCR에 사용할 언어 설정 (영어)
 
         // 원본 이미지 파일 경로 설정
-        String originalImagePath = "강화 등급.png";
+        String originalImagePath = "강화1.png";
         File originalImageFile = new File(originalImagePath);
 
         // 이미지 파일 존재 여부 확인
@@ -42,7 +42,7 @@ public class 이미지_숫자_추출 {
         }
 
         // 이미지 전처리 수행
-        String processedImagePath = "강화 전체 화면.png";
+        String processedImagePath = "C:\\Users\\m5118\\Videos\\Captures\\이미지 전처리.png";
         boolean preprocessingSuccess = preprocessImage(originalImagePath, processedImagePath);
 
         if (!preprocessingSuccess) {

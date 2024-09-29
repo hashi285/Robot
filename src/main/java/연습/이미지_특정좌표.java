@@ -8,7 +8,7 @@ import java.awt.event.MouseEvent;
 public class 이미지_특정좌표 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Image Mouse Click Example");
-        ImageIcon icon = new ImageIcon("C:\\Users\\m5118\\Videos\\Captures\\이미지 전처리.png");
+        ImageIcon icon = new ImageIcon("이미지 전처리.png");
         JLabel label = new JLabel(icon);
 
         label.addMouseListener(new MouseAdapter() {

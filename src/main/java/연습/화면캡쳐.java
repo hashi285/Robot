@@ -1,8 +1,6 @@
 package 연습;
 
-import java.awt.AWTException;
-import java.awt.Rectangle;
-import java.awt.Robot;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -15,8 +13,10 @@ public class 화면캡쳐 {
             Robot robot = new Robot();
 
             // 캡처할 화면의 크기 설정
-            Rectangle captureRect = new Rectangle(136, 109, 760, 450);
+           Rectangle captureRect = new Rectangle(177, 499, 760, 450);
 
+            // 캡처할 화면의 크기 설정 (전체 화면)
+           // Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
 
             // 화면 캡처
             BufferedImage screenFullImage = robot.createScreenCapture(captureRect);
