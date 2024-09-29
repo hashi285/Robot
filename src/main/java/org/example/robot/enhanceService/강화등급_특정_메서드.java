@@ -32,16 +32,16 @@ public class 강화등급_특정_메서드 {
     // 메서드 예시
     private static void method1() {
         System.out.println("메서드 1 실행");
-        // 메서드 1의 로직 구현
+        // 메서드 1의 로직 구현 ( 현재 카드로 강화 실행 )
     }
 
     private static void method2() {
         System.out.println("메서드 2 실행");
-        // 메서드 2의 로직 구현
+        // 메서드 2의 로직 구현 ( 다음 카드 확인 )
     }
 
     private static void method3() {
         System.out.println("메서드 3 실행");
-        // 메서드 3의 로직 구현
+        // 메서드 3의 로직 구현 ( 다음 카드 확인 )
     }
 }

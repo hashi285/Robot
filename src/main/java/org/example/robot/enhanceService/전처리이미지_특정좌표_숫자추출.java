@@ -54,7 +54,7 @@ public class 전처리이미지_특정좌표_숫자추출 {
                 int number = Integer.parseInt(text);
                 System.out.println("관심 영역에서 추출한 숫자: " + number);
 
-                // 숫자에 따라 특정 메서드 실행
+                // 숫자에 따라 특정 메서드 실행 ---------------------------------------------------
                 A.executeMethodByNumber(number);
             } else {
                 System.out.println("관심 영역에서 숫자를 추출하지 못했습니다.");
