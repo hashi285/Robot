@@ -22,6 +22,22 @@ public class 강화등급_특정_메서드 {
             case 3:
                 method3();
                 break;
+            case 4:
+                method3();
+                break;
+            case 5:
+                method3();
+                break;
+            case 6:
+                method3();
+                break;
+            case 7:
+                method3();
+                break;
+            case 8:
+                method3();
+                break;
+
             // 추가로 필요한 숫자와 메서드를 정의하세요.
             default:
                 System.out.println("해당 숫자에 대한 메서드가 없습니다: " + number);
